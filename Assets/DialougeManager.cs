@@ -16,6 +16,12 @@ public class DialougeManager : MonoBehaviour
     int activeMessage = 0;
     public static bool isActive = false;
 
+    public string[] dialogueSentences;
+    private string currentSentence = "";
+    private int currentIndex = 0;
+    public float delay = 0.1f;
+    private Text dialogueTextComponent;
+
     public void OpenDialouge(Message[] messages, Actor[] actors)
     {
         currentMessages = messages;
@@ -64,6 +70,27 @@ public class DialougeManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isActive == true)
         {
             NextMessage();
+        }
+    }
+
+    private IEnumerator TypeDialogue()
+    {
+        foreach (string sentence in dialogueSentences)
+        {
+            currentSentence = "";
+            currentIndex = 0;
+
+            while (currentIndex < sentence.Length)
+            {
+                currentSentence += sentence[currentIndex];
+                dialogueTextComponent.text = currentSentence;
+                currentIndex++;
+
+                yield return new WaitForSeconds(delay);
+            }
+
+            // Wait for a brief pause at the end of each sentence if desired
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
