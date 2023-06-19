@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class DialougeManager : MonoBehaviour
 {
-    public string River_1;
+    public int River_1BuildIndex;
 
     public Image actorImage;
     public TextMeshProUGUI actorName;
@@ -19,10 +19,11 @@ public class DialougeManager : MonoBehaviour
     int activeMessage = 0;
     public static bool isActive = false;
 
-    public void TransitionToNextScene()
+    public void NextScene()
     {
-        SceneManager.LoadScene(River_1);
+        SceneManager.LoadScene(River_1BuildIndex);
     }
+
 
     public void OpenDialouge(Message[] messages, Actor[] actors)
     {
@@ -55,6 +56,7 @@ public class DialougeManager : MonoBehaviour
         {
             Debug.Log("ConvoEnded");
             isActive = false;
+            NextScene();
         }
 
     }

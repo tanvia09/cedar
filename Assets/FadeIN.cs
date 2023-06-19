@@ -30,7 +30,7 @@ public class FadeIN : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             canvasGroup.alpha += 0.1f;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.07f);
         }
     }
 }
