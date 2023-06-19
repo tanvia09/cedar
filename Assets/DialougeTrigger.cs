@@ -6,10 +6,13 @@ public class DialougeTrigger : MonoBehaviour
 {
     public Message[] messages;
     public Actor[] actors;
+    private AudioSource RiversideTheme;
 
     void Start()
     {
         FindObjectOfType<DialougeManager>().OpenDialouge(messages, actors);
+        RiversideTheme = GetComponent<AudioSource>();
+        RiversideTheme.Play();
     }
     
 }
