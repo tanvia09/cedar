@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialougeManager : MonoBehaviour
 {
+    public string River_1;
+
     public Image actorImage;
     public TextMeshProUGUI actorName;
     public TextMeshProUGUI messageText;
@@ -16,8 +19,10 @@ public class DialougeManager : MonoBehaviour
     int activeMessage = 0;
     public static bool isActive = false;
 
-    private CanvasGroup canvasGroup;
-
+    public void TransitionToNextScene()
+    {
+        SceneManager.LoadScene(River_1);
+    }
 
     public void OpenDialouge(Message[] messages, Actor[] actors)
     {
@@ -57,9 +62,7 @@ public class DialougeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start() 
     {
-        canvasGroup = GetComponent<CanvasGroup>();
-        canvasGroup.alpha = 0;
-        StartCoroutine(DelayedAction());
+        
     }
 
 
@@ -71,14 +74,6 @@ public class DialougeManager : MonoBehaviour
             NextMessage();
         }
 
-    }
-
-    private IEnumerator DelayedAction()
-    {
-
-        canvasGroup.alpha += 0.1f;
-        yield return new WaitForSeconds(0.05f);
-        canvasGroup.alpha = Mathf.Clamp01(canvasGroup.alpha);
     }
 }
 
