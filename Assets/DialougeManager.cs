@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class DialougeManager : MonoBehaviour
 {
-    public int River_1BuildIndex;
+    public int WaterfallRiver;
 
     public Image actorImage;
     public TextMeshProUGUI actorName;
@@ -21,7 +21,8 @@ public class DialougeManager : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(River_1BuildIndex);
+        SceneManager.LoadScene(WaterfallRiver);
+        Debug.Log("NextScene function called");
     }
 
 
