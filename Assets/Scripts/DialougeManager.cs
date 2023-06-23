@@ -21,8 +21,7 @@ public class DialougeManager : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(WaterfallRiver);
-        Debug.Log("NextScene function called");
+        SceneManager.LoadScene(2);
     }
 
 

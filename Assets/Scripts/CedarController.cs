@@ -14,7 +14,6 @@ public class CedarController : MonoBehaviour
     public GameObject GameOver;
     public float thresholdY = 54.4f;
     public GameObject BlackScreen;
-    public AudioSource Splash;
     public AudioSource RiversideTheme;
 
     public void OnTriggerEnter2D(Collider2D collider)
@@ -41,7 +40,6 @@ public class CedarController : MonoBehaviour
         {
             RiversideTheme.Stop();
             BlackScreen.SetActive(true);
-            Splash.Play();
             StartCoroutine(WaitForSeconds());
         }
 
@@ -60,7 +58,7 @@ public class CedarController : MonoBehaviour
         {
             Vector3 newPosition = new Vector3(0f, 0f, 1f);
             transform.position = newPosition;
-
+           
             if (!GameOver.activeSelf)
             {
                 Crashed = false;
@@ -70,8 +68,8 @@ public class CedarController : MonoBehaviour
     }
     private IEnumerator WaitForSeconds()
     {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(NewPacificana);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(3);
     }
 
 }
