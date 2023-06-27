@@ -7,6 +7,7 @@ public class ShinyCont : MonoBehaviour
     public float glideSpeed = 1f;
     public bool isGlide = true;
     public int repeatCount = 20;
+    public bool CedarMayor = false;
 
     IEnumerator Glide()
     {
@@ -19,6 +20,12 @@ public class ShinyCont : MonoBehaviour
             // Wait for a short duration before the next movement
             yield return new WaitForSeconds(0.02f);
         }
+    }
+
+    public void CedarIsMayor()
+    {
+        CedarMayor = true;
+        Debug.Log("CedarMayor!");
     }
     
     private void Update()
