@@ -6,28 +6,44 @@ public class RPGCedarCont : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Animator animator;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb.bodyType = RigidbodyType2D.Dynamic;
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         GetComponent<Rigidbody2D>().freezeRotation = true;
+        animator.SetBool("Awake", false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        Vector2 movement = new Vector2(horizontalInput, verticalInput);
-        movement.Normalize();
-        rb.velocity = movement * moveSpeed;
-
+        if (!DialougeManager.isActive)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            GetComponent<Rigidbody2D>().freezeRotation = true;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+            Vector2 movement = new Vector2(horizontalInput, verticalInput);
+            movement.Normalize();
+            rb.velocity = movement * moveSpeed;
+        }
+        else
+        {
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        }
 
         //animation
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.SetBool("Awake", true);
+        }
+
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             animator.SetInteger("Direction 1U 2D 3L 4R", 1);

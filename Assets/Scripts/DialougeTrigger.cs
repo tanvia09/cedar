@@ -10,11 +10,16 @@ public class DialougeTrigger : MonoBehaviour
 
     void Start()
     {
-        FindObjectOfType<DialougeManager>().OpenDialouge(messages, actors);
+        StartDialouge();
         RiversideTheme = GetComponent<AudioSource>();
         RiversideTheme.Play();
     }
-    
+
+    public void StartDialouge()
+    {
+        FindObjectOfType<DialougeManager>().OpenDialouge(messages, actors);
+        Debug.Log("ConversationTriggered");
+    }
 }
 
 [System.Serializable]

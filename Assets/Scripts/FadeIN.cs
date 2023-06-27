@@ -23,7 +23,7 @@ public class FadeIN : MonoBehaviour
         }
     }
 
-    private IEnumerator DelayedAction()
+    public IEnumerator DelayedAction()
     {
         canvasGroup.alpha = Mathf.Clamp01(canvasGroup.alpha);
         canvasGroup.alpha = 0;

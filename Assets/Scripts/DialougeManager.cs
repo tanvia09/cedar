@@ -19,6 +19,19 @@ public class DialougeManager : MonoBehaviour
     int activeMessage = 0;
     public static bool isActive = false;
 
+    private CanvasGroup DialougeBox;
+
+
+    public IEnumerator DelayedAction()
+    {
+        DialougeBox.alpha = Mathf.Clamp01(DialougeBox.alpha);
+        for (int i = 0; i < 10; i++)
+        {
+            DialougeBox.alpha -= 0.1f;
+            yield return new WaitForSeconds(0.07f);
+        }
+    }
+
     public void NextScene()
     {
         SceneManager.LoadScene(2);
@@ -27,6 +40,7 @@ public class DialougeManager : MonoBehaviour
 
     public void OpenDialouge(Message[] messages, Actor[] actors)
     {
+        DialougeBox.alpha = 1;
         currentMessages = messages;
         currentActors = actors;
         activeMessage = 0;
@@ -54,9 +68,14 @@ public class DialougeManager : MonoBehaviour
         }
         else 
         {
+            Scene currentScene = SceneManager.GetActiveScene();
             Debug.Log("ConvoEnded");
             isActive = false;
-            NextScene();
+            if (currentScene.buildIndex == 1)
+            {
+                NextScene();
+            }
+            StartCoroutine(DelayedAction());
         }
 
     }
@@ -64,7 +83,7 @@ public class DialougeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start() 
     {
-        
+        DialougeBox = GetComponent<CanvasGroup>();
     }
 
 
