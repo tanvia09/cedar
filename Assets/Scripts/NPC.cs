@@ -16,6 +16,10 @@ public class NPC : MonoBehaviour
             {
                 Choices.SetActive(true);
             }
+            else
+            {
+                Choices.SetActive(false);
+            }
         }
     }
 }

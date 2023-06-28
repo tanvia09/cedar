@@ -18,7 +18,6 @@ public class DialougeTrigger : MonoBehaviour
     public void StartDialouge()
     {
         FindObjectOfType<DialougeManager>().OpenDialouge(messages, actors);
-        Debug.Log("ConversationTriggered");
     }
 }
 

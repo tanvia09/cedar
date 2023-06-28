@@ -14,7 +14,7 @@ public class CedarController : MonoBehaviour
     public GameObject GameOver;
     public float thresholdY = 54.4f;
     public GameObject BlackScreen;
-    public AudioSource RiversideTheme;
+    public static GameObject AudioSource;
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
@@ -29,7 +29,6 @@ public class CedarController : MonoBehaviour
     void Start()
     {
         GetComponent<Rigidbody2D>().freezeRotation = true;
-        RiversideTheme.Play();
     }
 
     // Update is called once per frame
@@ -38,9 +37,13 @@ public class CedarController : MonoBehaviour
 
         if (transform.position.y > thresholdY)
         {
-            RiversideTheme.Stop();
             BlackScreen.SetActive(true);
             StartCoroutine(WaitForSeconds());
+            GameObject AudioSource = CedarController.AudioSource;
+            if (AudioSource != null)
+            {
+                AudioSource.SetActive(false);
+            }
         }
 
         if (!Crashed)

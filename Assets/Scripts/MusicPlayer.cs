@@ -12,10 +12,4 @@ public class MusicPlayer : MonoBehaviour
         TitleSong = GetComponent<AudioSource>();
         TitleSong.Play();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

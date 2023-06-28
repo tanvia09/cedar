@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShinyCont : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class ShinyCont : MonoBehaviour
     public bool isGlide = true;
     public int repeatCount = 20;
     public bool CedarMayor = false;
+    public DialougeTrigger trigger;
+    public Vector3 targetPosition = new Vector3(36.59f, -1.08f, 0f);
+    public GameObject Choices;
+    public GameObject Panel;
+    public bool CanLeave;
 
     IEnumerator Glide()
     {
@@ -26,6 +32,7 @@ public class ShinyCont : MonoBehaviour
     {
         CedarMayor = true;
         Debug.Log("CedarMayor!");
+        transform.position = targetPosition;
     }
     
     private void Update()
@@ -35,7 +42,34 @@ public class ShinyCont : MonoBehaviour
             if (isGlide)
             {
                 StartCoroutine(Glide());
-                Debug.Log("Glide");
+            }
+        }
+
+        if (CanLeave == true)
+        {
+            if (!DialougeManager.isActive)
+            {
+                Panel.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    SceneManager.LoadScene(4);
+                }
+            }
+            
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Player") == true)
+        {
+            if (CedarMayor == true)
+            {
+                trigger.StartDialouge();
+                Choices.SetActive(false);
+                CanLeave = true;
+                CedarMayor = false;
             }
         }
     }

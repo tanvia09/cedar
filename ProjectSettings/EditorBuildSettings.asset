@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NewPacificana.unity
     guid: d42ded0f755a69f408f08ac5ef631260
+  - enabled: 1
+    path: Assets/Scenes/MeenuruRiver.unity
+    guid: 41861fc6657bca84987d98edf680b4cf
   m_configObjects: {}
