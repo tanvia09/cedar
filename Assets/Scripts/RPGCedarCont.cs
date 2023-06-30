@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RPGCedarCont : MonoBehaviour
 {
@@ -15,7 +16,16 @@ public class RPGCedarCont : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         GetComponent<Rigidbody2D>().freezeRotation = true;
-        animator.SetBool("Awake", false);
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.buildIndex == 3)
+        {
+            animator.SetBool("Awake", false);
+        }
+        else
+        {
+            animator.SetBool("Awake", true);
+        }
     }
 
     // Update is called once per frame

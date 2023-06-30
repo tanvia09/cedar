@@ -18,6 +18,7 @@ public class DialougeManager : MonoBehaviour
     Actor[] currentActors;
     int activeMessage = 0;
     public static bool isActive = false;
+    public GameObject DiaBox;
 
     private CanvasGroup DialougeBox;
 
@@ -40,6 +41,7 @@ public class DialougeManager : MonoBehaviour
 
     public void OpenDialouge(Message[] messages, Actor[] actors)
     {
+        DiaBox.SetActive(true);
         DialougeBox.alpha = 1;
         currentMessages = messages;
         currentActors = actors;
