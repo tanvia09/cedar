@@ -71,8 +71,19 @@ public class CedarController : MonoBehaviour
     }
     private IEnumerator WaitForSeconds()
     {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(3);
+        Scene currentScene = SceneManager.GetActiveScene();
+        
+        if (currentScene.buildIndex == 2)
+        {
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene(3);
+        }
+
+        if (currentScene.buildIndex == 4)
+        {
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene(5);
+        }
     }
 
 }

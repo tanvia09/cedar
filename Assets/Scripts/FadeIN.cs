@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FadeIN : MonoBehaviour
 {
@@ -12,6 +13,13 @@ public class FadeIN : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0;
         StartCoroutine(DelayedAction());
+
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.buildIndex == 4)
+        {
+            StartCoroutine(DelayedAction());
+        }
     }
 
     // Update is called once per frame
