@@ -445,6 +445,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 1ea32a0c42d22a14e8a0ac6d3ef93481, type: 3}
   - name: Shiny
     sprite: {fileID: 21300000, guid: e28bf570dc2ce0b428fe4eb6fb265918, type: 3}
+  Diabox: {fileID: 1544047506}
 --- !u!50 &481973434
 Rigidbody2D:
   serializedVersion: 4
@@ -843,6 +844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 911504093}
   Choices: {fileID: 1855312621}
+  CF: 1
 --- !u!114 &911504093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +863,7 @@ MonoBehaviour:
   actors:
   - name: Poster
     sprite: {fileID: 21300000, guid: 30d5949e79838c84cae23658377a5546, type: 3}
+  Diabox: {fileID: 1544047506}
 --- !u!212 &911504094
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1598,6 +1601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 1398106082}
   Choices: {fileID: 1855312621}
+  CF: 1
 --- !u!114 &1398106082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1616,6 +1620,7 @@ MonoBehaviour:
   actors:
   - name: Fish Behind Door
     sprite: {fileID: 0}
+  Diabox: {fileID: 1544047506}
 --- !u!4 &1398106083
 Transform:
   m_ObjectHideFlags: 0
@@ -1876,6 +1881,7 @@ MonoBehaviour:
   actorName: {fileID: 370628135}
   messageText: {fileID: 966274341}
   backgroundBox: {fileID: 1544047507}
+  DialougeBox: {fileID: 1544047511}
 --- !u!114 &1544047509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2559,6 +2565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 1776282852}
   Choices: {fileID: 1855312621}
+  CF: 1
 --- !u!114 &1776282852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2579,6 +2586,7 @@ MonoBehaviour:
   actors:
   - name: Protesters
     sprite: {fileID: 1944464037, guid: 31f9031e4db2e4b4baa0798c432a14f0, type: 3}
+  Diabox: {fileID: 1544047506}
 --- !u!50 &1776282853
 Rigidbody2D:
   serializedVersion: 4
@@ -2794,6 +2802,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 1ea32a0c42d22a14e8a0ac6d3ef93481, type: 3}
   - name: ???
     sprite: {fileID: 21300000, guid: 3bcec36e4a786884f87464541dc39f18, type: 3}
+  Diabox: {fileID: 1544047506}
 --- !u!4 &1817135275
 Transform:
   m_ObjectHideFlags: 0
@@ -3245,7 +3254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967220120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03634739, y: -3.069546, z: -11}
+  m_LocalPosition: {x: -0.042292595, y: -3.0695488, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

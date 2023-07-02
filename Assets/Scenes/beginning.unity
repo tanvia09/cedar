@@ -1066,6 +1066,7 @@ MonoBehaviour:
   actorName: {fileID: 232107971}
   messageText: {fileID: 13550791}
   backgroundBox: {fileID: 1496081310}
+  DialougeBox: {fileID: 1496081316}
 --- !u!225 &1496081316
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1367,6 +1368,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: eac71d9496d04244d80750236f5ab6ec, type: 3}
   - name: Grace
     sprite: {fileID: 21300000, guid: 40679c5d9be22bc4d818727bed952b68, type: 3}
+  Diabox: {fileID: 1496081309}
 --- !u!4 &2079459437
 Transform:
   m_ObjectHideFlags: 0

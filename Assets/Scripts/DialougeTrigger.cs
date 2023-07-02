@@ -18,10 +18,6 @@ public class DialougeTrigger : MonoBehaviour
         {
             StartDialouge();
         }
-        else
-        {
-            Diabox.SetActive(false);
-        }
         RiversideTheme = GetComponent<AudioSource>();
         RiversideTheme.Play();
     }
@@ -29,7 +25,8 @@ public class DialougeTrigger : MonoBehaviour
     public void StartDialouge()
     {
         Diabox.SetActive(true);
-        FindObjectOfType<DialougeManager>().OpenDialouge(messages, actors);
+        DialougeManager dialougeManager = FindObjectOfType<DialougeManager>(); 
+        dialougeManager.OpenDialouge(messages, actors);
     }
 }
 

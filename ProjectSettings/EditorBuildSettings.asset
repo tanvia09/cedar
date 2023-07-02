@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Meenuru Lake.unity
     guid: d58b8d430e69f8648bfe92d1437dd9ad
+  - enabled: 1
+    path: Assets/Scenes/NinaEncounter.unity
+    guid: 2fec766eafce75b428d580720e3de7ff
   m_configObjects: {}
