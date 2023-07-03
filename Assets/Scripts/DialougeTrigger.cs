@@ -12,14 +12,29 @@ public class DialougeTrigger : MonoBehaviour
 
     void Start()
     {
+        RiversideTheme = GetComponent<AudioSource>();
+        RiversideTheme.Play();
+
         Scene currentScene = SceneManager.GetActiveScene();
 
         if (currentScene.buildIndex != 5)
         {
-            StartDialouge();
+            if (currentScene.buildIndex != 6)
+            {
+                StartDialouge();
+            }
         }
-        RiversideTheme = GetComponent<AudioSource>();
-        RiversideTheme.Play();
+
+        if (currentScene.buildIndex == 6)
+        {
+            StartCoroutine(Wait());
+        }
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2f);
+        StartDialouge();
     }
 
     public void StartDialouge()

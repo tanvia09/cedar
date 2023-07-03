@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NinaEncounter.unity
     guid: 2fec766eafce75b428d580720e3de7ff
+  - enabled: 1
+    path: Assets/Scenes/DangerStream.unity
+    guid: 88f0e1158901ad447aec94290dfcb008
   m_configObjects: {}

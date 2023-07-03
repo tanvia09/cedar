@@ -32,11 +32,6 @@ public class DialougeManager : MonoBehaviour
         }
     }
 
-    public void NextScene()
-    {
-        SceneManager.LoadScene(2);
-    }
-
 
     public void OpenDialouge(Message[] messages, Actor[] actors)
     {
@@ -73,7 +68,11 @@ public class DialougeManager : MonoBehaviour
             isActive = false;
             if (currentScene.buildIndex == 1)
             {
-                NextScene();
+                SceneManager.LoadScene(2);
+            }
+            if (currentScene.buildIndex == 6)
+            {
+                SceneManager.LoadScene(7);
             }
             StartCoroutine(DelayedAction());
         }
