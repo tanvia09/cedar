@@ -11,6 +11,7 @@ public class CedarController : MonoBehaviour
     public GameObject Panel;
     public float moveSpeed = 5f;
     private bool Crashed = false;
+    private bool CrossY = false;
     public GameObject GameOver;
     public float thresholdY = 54.4f;
     public GameObject BlackScreen;
@@ -37,6 +38,7 @@ public class CedarController : MonoBehaviour
 
         if (transform.position.y > thresholdY)
         {
+            CrossY = true;
             BlackScreen.SetActive(true);
             StartCoroutine(WaitForSeconds());
             GameObject AudioSource = CedarController.AudioSource;
@@ -53,7 +55,10 @@ public class CedarController : MonoBehaviour
 
             if (!Panel.activeSelf)
             {
-                transform.Translate(Vector3.up * UPspeed * Time.deltaTime);
+                if (CrossY == false)
+                {
+                    transform.Translate(Vector3.up * UPspeed * Time.deltaTime);
+                }
             }
         }
         

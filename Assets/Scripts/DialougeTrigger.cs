@@ -9,6 +9,7 @@ public class DialougeTrigger : MonoBehaviour
     public Actor[] actors;
     private AudioSource RiversideTheme;
     public GameObject Diabox;
+    private bool OneTime = true;
 
     void Start()
     {
@@ -21,13 +22,33 @@ public class DialougeTrigger : MonoBehaviour
         {
             if (currentScene.buildIndex != 6)
             {
-                StartDialouge();
+                if (currentScene.buildIndex != 7)
+                {
+                    StartDialouge();
+                }
             }
         }
 
         if (currentScene.buildIndex == 6)
         {
             StartCoroutine(Wait());
+        }
+    }
+
+    void Update()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.buildIndex == 7)
+        {
+            if (Diabox.activeSelf)
+            {
+                if (OneTime == true)
+                {
+                    DialougeManager dialougeManager = FindObjectOfType<DialougeManager>();
+                    dialougeManager.OpenDialouge(messages, actors);
+                    OneTime = false;
+                }
+            }
         }
     }
 
