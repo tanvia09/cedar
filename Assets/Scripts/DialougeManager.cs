@@ -13,6 +13,9 @@ public class DialougeManager : MonoBehaviour
     public TextMeshProUGUI actorName;
     public TextMeshProUGUI messageText;
     public RectTransform backgroundBox;
+    public GameObject CedarSwims;
+    public GameObject JumpingCedar;
+    public GameObject Camera;
 
     Message[] currentMessages;
     Actor[] currentActors;
@@ -74,7 +77,13 @@ public class DialougeManager : MonoBehaviour
             {
                 SceneManager.LoadScene(7);
             }
-            StartCoroutine(DelayedAction());
+            if (currentScene.buildIndex == 7)
+            {
+                Camera.SetActive(false);
+                CedarSwims.SetActive(false);
+                JumpingCedar.SetActive(true);
+            }
+            StartCoroutine(DelayedAction()); //fades in the end screen
         }
 
     }

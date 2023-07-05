@@ -2027,8 +2027,8 @@ MonoBehaviour:
   - actorId: 0
     message: I just came from New Pacificana.
   - actorId: 1
-    message: Have you seen an olive green fish, Sealia? He said he was going to swim
-      down danger stream.
+    message: Have you seen a crocodile, Sealia? He said he was going to swim down
+      danger stream.
   - actorId: 1
     message: We warned him not to, but he went anyway. He's been gone for 2 days!
   - actorId: 0
@@ -2499,7 +2499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948869129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2852755, y: -1.9238405, z: -11}
+  m_LocalPosition: {x: -3.2622738, y: -1.9236846, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

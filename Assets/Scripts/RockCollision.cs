@@ -9,7 +9,6 @@ public class RockCollision : MonoBehaviour
 
     public void OnTriggerEnter2D (Collider2D collider)
     {
-        Debug.Log("CollisionEntered");
         if (collider.gameObject.CompareTag("Cedarswims"))
         {
             CedarCollided();
