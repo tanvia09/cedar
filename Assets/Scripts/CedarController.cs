@@ -21,7 +21,6 @@ public class CedarController : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Rock"))
         {
-            Debug.Log("CedarCollisionEntered");
             Crashed = true;
         }
     }

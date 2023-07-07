@@ -20,15 +20,4 @@ public class RockCollision : MonoBehaviour
         Debug.Log("GameOver");
         GameOver.SetActive(true);
     }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

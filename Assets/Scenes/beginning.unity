@@ -1066,6 +1066,10 @@ MonoBehaviour:
   actorName: {fileID: 232107971}
   messageText: {fileID: 13550791}
   backgroundBox: {fileID: 1496081310}
+  CedarSwims: {fileID: 700698772}
+  JumpingCedar: {fileID: 700698772}
+  Camera: {fileID: 700698772}
+  Directions: {fileID: 700698772}
   DialougeBox: {fileID: 1496081316}
 --- !u!225 &1496081316
 CanvasGroup:

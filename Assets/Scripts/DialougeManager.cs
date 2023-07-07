@@ -16,6 +16,7 @@ public class DialougeManager : MonoBehaviour
     public GameObject CedarSwims;
     public GameObject JumpingCedar;
     public GameObject Camera;
+    public GameObject Directions;
 
     Message[] currentMessages;
     Actor[] currentActors;
@@ -82,8 +83,9 @@ public class DialougeManager : MonoBehaviour
                 Camera.SetActive(false);
                 CedarSwims.SetActive(false);
                 JumpingCedar.SetActive(true);
+                Directions.SetActive(true);
             }
-            StartCoroutine(DelayedAction()); //fades in the end screen
+            StartCoroutine(DelayedAction()); //fades out box
         }
 
     }

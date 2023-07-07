@@ -1,0 +1,118 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class CJump : MonoBehaviour
+{
+    public float jumpForce = 20;
+    float velocity;
+    public float gravity = -10f;
+    private bool IsGrounded = true;
+    public float UpSpeed = 10f;
+    private bool SpacePressed = false;
+    public float Island = 180f;
+    public float moveSpeed = 5f;
+    public Animator animator;
+    public bool GroundOff = false;
+    public float thresholdY = -10f;
+    public GameObject Panel;
+    public Rigidbody2D rb;
+
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Rock"))
+        {
+            if (!GroundOff)
+            {
+                IsGrounded = true;
+            }
+        }
+        else
+        {
+            IsGrounded = false;
+        }
+    }
+
+    void Update()
+    {
+        //moving
+        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * horizontalInput * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector3.up * verticalInput * moveSpeed * Time.deltaTime);
+
+        velocity += gravity * Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            velocity = jumpForce;
+            StartCoroutine(WaitOnJump());
+            StartCoroutine(OffGround());
+        }
+        //here too
+        if (SpacePressed == true)
+        {
+            transform.Translate(Vector3.down * velocity * Time.deltaTime);
+        }
+
+        if (IsGrounded)
+        {
+            if (!Input.GetKeyDown(KeyCode.Space))
+            {
+                velocity = 0;
+                animator.SetBool("Isswimming", false);
+            }
+        }
+
+        if (!IsGrounded)
+        {
+            if (transform.position.y < Island)
+            {
+                //and here
+                transform.Translate(Vector3.up * UpSpeed * Time.deltaTime);
+                if (!SpacePressed)
+                {
+                    animator.SetBool("Isswimming", true);
+                }
+            }
+            else
+            {
+                animator.SetBool("Isswimming", false);
+            }
+        }
+
+        if (transform.position.y < thresholdY)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+            Panel.SetActive(true);
+            StartCoroutine(WaitForSeconds());
+        }
+    }
+
+    private IEnumerator WaitOnJump()
+    {
+        SpacePressed = true;
+        IsGrounded = false;
+        yield return new WaitForSeconds(3f);
+        SpacePressed = false;
+    }
+
+    private IEnumerator OffGround()
+    {
+        GroundOff = true;
+        yield return new WaitForSeconds(0.25f);
+        GroundOff = false;
+    }
+
+    private IEnumerator WaitForSeconds()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.buildIndex == 7)
+        {
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene(8);
+        }
+
+    }
+}
