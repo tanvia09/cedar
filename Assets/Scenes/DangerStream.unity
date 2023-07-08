@@ -4044,7 +4044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 20
-  gravity: 5
+  gravity: 1
   UpSpeed: 20
   Island: 183
   moveSpeed: 5
@@ -4298,7 +4298,7 @@ MonoBehaviour:
     message: I've been stuck eating moss for like, days. Do you know how bad moss
       tastes? It sure is hard being stupid, right Mr. Turtle?
   - actorId: 0
-    message: It's Cedar. Also, your dad asked me to get you out of here. It's probably
+    message: It's Cedar. Also, someone asked me to get you out of here. It's probably
       a bad idea to swim upstream so we'll jump on the rocks.
   - actorId: 1
     message: Oh yeah! Rocks!
@@ -4390,7 +4390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 842270264}
-  delay: 3
+  delay: 0.5
 --- !u!1 &905103601
 GameObject:
   m_ObjectHideFlags: 0

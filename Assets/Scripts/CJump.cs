@@ -26,6 +26,8 @@ public class CJump : MonoBehaviour
             if (!GroundOff)
             {
                 IsGrounded = true;
+                animator.SetBool("Isjumping", false);
+                animator.SetBool("Isswimming", false);
             }
         }
         else
@@ -68,16 +70,11 @@ public class CJump : MonoBehaviour
         {
             if (transform.position.y < Island)
             {
-                //and here
-                transform.Translate(Vector3.up * UpSpeed * Time.deltaTime);
                 if (!SpacePressed)
                 {
+                    transform.Translate(Vector3.up * UpSpeed * Time.deltaTime);
                     animator.SetBool("Isswimming", true);
                 }
-            }
-            else
-            {
-                animator.SetBool("Isswimming", false);
             }
         }
 
@@ -93,7 +90,10 @@ public class CJump : MonoBehaviour
     {
         SpacePressed = true;
         IsGrounded = false;
-        yield return new WaitForSeconds(3f);
+        animator.SetBool("Isswimming", false);
+        animator.SetBool("Isjumping", true);
+        yield return new WaitForSeconds(2f);
+        animator.SetBool("Isjumping", false);
         SpacePressed = false;
     }
 
