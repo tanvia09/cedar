@@ -20,6 +20,11 @@ public class FadeIN : MonoBehaviour
         {
             StartCoroutine(DelayedAction());
         }
+
+        if (currentScene.buildIndex == 8)
+        {
+            StartCoroutine(DelayedAction());
+        }
     }
 
     // Update is called once per frame

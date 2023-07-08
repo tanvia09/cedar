@@ -4176,6 +4176,7 @@ GameObject:
   - component: {fileID: 877558354}
   - component: {fileID: 877558357}
   - component: {fileID: 877558358}
+  - component: {fileID: 877558359}
   m_Layer: 0
   m_Name: HoldingDT
   m_TagString: GameMusic
@@ -4391,6 +4392,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 842270264}
   delay: 0.5
+--- !u!95 &877558359
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877558353}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fcabfa5e9b66ed84ab38db85fba2fcb8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &905103601
 GameObject:
   m_ObjectHideFlags: 0

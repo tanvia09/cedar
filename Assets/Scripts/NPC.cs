@@ -11,6 +11,9 @@ public class NPC : MonoBehaviour
     private bool CanLeave;
     public GameObject Panel;
 
+    int clickCount = 0;
+    public int repeatCount = 20;
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player") == true)
@@ -39,18 +42,47 @@ public class NPC : MonoBehaviour
 
     void Update()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+
         if (CanLeave == true)
         {
             if (!DialougeManager.isActive)
             {
-                Panel.SetActive(true);
-
-                if (Input.GetKeyDown(KeyCode.X))
+                if (currentScene.buildIndex == 5)
                 {
-                    SceneManager.LoadScene(6);
+                    Panel.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.X))
+                    {
+                        SceneManager.LoadScene(6);
+                    }
                 }
             }
 
+        }
+
+        if (currentScene.buildIndex == 8)
+        {
+            if (DialougeManager.isActive)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    clickCount++;
+                }
+            }
+            
+            if (clickCount == 7)
+            {
+                StartCoroutine(Glide());
+            }
+        }
+    }
+
+    private IEnumerator Glide()
+    {
+        for (int i = 0; i < repeatCount; i++)
+        {
+            transform.Translate(Vector3.right * 0.1f * 0.5f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }

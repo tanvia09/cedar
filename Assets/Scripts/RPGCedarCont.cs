@@ -8,6 +8,8 @@ public class RPGCedarCont : MonoBehaviour
     public float moveSpeed = 5f;
     public Animator animator;
     public Rigidbody2D rb;
+    public float Xthresh = 50f;
+    public GameObject Night;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,16 @@ public class RPGCedarCont : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         }
 
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.buildIndex == 8)
+        {
+            if (transform.position.x > Xthresh)
+            {
+                Night.SetActive(true);
+                StartCoroutine(WaitForSeconds());
+            }
+        }
+
         //animation
         if (Input.GetMouseButtonDown(0))
         {
@@ -57,7 +69,7 @@ public class RPGCedarCont : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             animator.SetInteger("Direction 1U 2D 3L 4R", 1);
-            animator.SetBool("Moving", true); 
+            animator.SetBool("Moving", true);
         }
         if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
         {
@@ -92,6 +104,17 @@ public class RPGCedarCont : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D))
         {
             animator.SetBool("Moving", false);
+        }
+    }
+
+    private IEnumerator WaitForSeconds()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.buildIndex == 8)
+        {
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene(9);
         }
     }
 }

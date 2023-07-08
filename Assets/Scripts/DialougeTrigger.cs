@@ -24,7 +24,10 @@ public class DialougeTrigger : MonoBehaviour
             {
                 if (currentScene.buildIndex != 7)
                 {
-                    StartDialouge();
+                    if (currentScene.buildIndex != 8)
+                    {
+                        StartDialouge();
+                    }
                 }
             }
         }
