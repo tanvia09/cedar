@@ -45,5 +45,16 @@ public class FadeIN : MonoBehaviour
             canvasGroup.alpha += 0.1f;
             yield return new WaitForSeconds(0.07f);
         }
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.buildIndex == 9)
+        {
+            yield return new WaitForSeconds(3f);
+            for (int i = 0; i < 10; i++)
+            {
+                canvasGroup.alpha -= 0.1f;
+                yield return new WaitForSeconds(0.07f);
+            }
+        }
     }
 }

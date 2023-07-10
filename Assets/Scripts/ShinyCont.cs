@@ -15,15 +15,14 @@ public class ShinyCont : MonoBehaviour
     public GameObject Panel;
     public bool CanLeave;
 
+    int clickCount = 0;
+
     IEnumerator Glide()
     {
         isGlide = false;
         for (int i = 0; i < repeatCount; i++)
         {
-            // Move the character to the left by 0.1 units
             transform.Translate(Vector3.left * 0.1f * glideSpeed);
-
-            // Wait for a short duration before the next movement
             yield return new WaitForSeconds(0.02f);
         }
     }
@@ -37,9 +36,32 @@ public class ShinyCont : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.buildIndex == 3)
         {
-            if (isGlide)
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (isGlide)
+                {
+                    StartCoroutine(Glide());
+                }
+            }
+        }
+
+        if (currentScene.buildIndex == 9)
+        {
+            CedarMayor = true;
+
+            if (DialougeManager.isActive)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    clickCount++;
+                }
+            }
+
+            if (clickCount == 14)
             {
                 StartCoroutine(Glide());
             }
@@ -51,10 +73,13 @@ public class ShinyCont : MonoBehaviour
             {
                 Panel.SetActive(true);
 
-                if (Input.GetKeyDown(KeyCode.X))
+                if (currentScene.buildIndex == 3)
                 {
-                    SceneManager.LoadScene(4);
-                }
+                    if (Input.GetKeyDown(KeyCode.X))
+                    {
+                        SceneManager.LoadScene(4);
+                    }
+                } 
             }
             
         }

@@ -642,7 +642,7 @@ MonoBehaviour:
   moveSpeed: 5
   animator: {fileID: 502547581}
   rb: {fileID: 502547579}
-  Xthresh: 13.5
+  Xthresh: 13.1
   Night: {fileID: 667755240}
 --- !u!95 &502547581
 Animator:
