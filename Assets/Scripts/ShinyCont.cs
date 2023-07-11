@@ -33,6 +33,13 @@ public class ShinyCont : MonoBehaviour
         Debug.Log("CedarMayor!");
         transform.position = targetPosition;
     }
+
+    public void Night()
+    {
+        Panel.SetActive(true);
+        Vector3 newPosition = new Vector3(0f, 0f, 11f);
+        transform.position = newPosition;
+    }
     
     private void Update()
     {
@@ -71,10 +78,9 @@ public class ShinyCont : MonoBehaviour
         {
             if (!DialougeManager.isActive)
             {
-                Panel.SetActive(true);
-
                 if (currentScene.buildIndex == 3)
                 {
+                    Panel.SetActive(true);
                     if (Input.GetKeyDown(KeyCode.X))
                     {
                         SceneManager.LoadScene(4);
