@@ -40,7 +40,7 @@ public class ShinyCont : MonoBehaviour
         Vector3 newPosition = new Vector3(0f, 0f, 11f);
         transform.position = newPosition;
     }
-    
+
     private void Update()
     {
         Scene currentScene = SceneManager.GetActiveScene();

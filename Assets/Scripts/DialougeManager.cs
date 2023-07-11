@@ -44,7 +44,6 @@ public class DialougeManager : MonoBehaviour
         currentActors = actors;
         activeMessage = 0;
         isActive = true;
-        Debug.Log("Started conversation, loaded messages");
         DisplayMessage();
     }
 
@@ -68,7 +67,6 @@ public class DialougeManager : MonoBehaviour
         else 
         {
             Scene currentScene = SceneManager.GetActiveScene();
-            Debug.Log("ConvoEnded");
             isActive = false;
             if (currentScene.buildIndex == 1)
             {

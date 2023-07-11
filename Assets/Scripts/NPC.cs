@@ -37,6 +37,11 @@ public class NPC : MonoBehaviour
             {
                 Choices.SetActive(false);
             }
+
+            if (gameObject.name == "Railroad9")
+            {
+                SceneManager.LoadScene(10);
+            }
         }
     }
 
