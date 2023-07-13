@@ -7,6 +7,7 @@ public class NPC : MonoBehaviour
 {
     public DialougeTrigger trigger;
     public GameObject Choices;
+    public GameObject Vill;
     public bool CF = true;
     private bool CanLeave;
     public GameObject Panel;
@@ -40,7 +41,7 @@ public class NPC : MonoBehaviour
 
             if (gameObject.name == "Railroad9")
             {
-                SceneManager.LoadScene(10);
+                Vill.SetActive(true);
             }
         }
     }

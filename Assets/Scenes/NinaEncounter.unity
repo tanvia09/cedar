@@ -1278,6 +1278,7 @@ GameObject:
   - component: {fileID: 871166118}
   - component: {fileID: 871166117}
   - component: {fileID: 871166116}
+  - component: {fileID: 871166119}
   m_Layer: 0
   m_Name: Nina
   m_TagString: Untagged
@@ -1373,6 +1374,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &871166119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871166115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85c2d2a14d90784db3c7a0d99339a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glideSpeed: 1
+  repeatCount: 40
 --- !u!1 &1360449261
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,6 +2063,11 @@ MonoBehaviour:
   actorName: {fileID: 1369850270}
   messageText: {fileID: 1759707176}
   backgroundBox: {fileID: 1944181144}
+  CedarSwims: {fileID: 0}
+  JumpingCedar: {fileID: 0}
+  Camera: {fileID: 0}
+  Directions: {fileID: 0}
+  Railroad: {fileID: 0}
   DialougeBox: {fileID: 1944181146}
 --- !u!225 &1944181146
 CanvasGroup:

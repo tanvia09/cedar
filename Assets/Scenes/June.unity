@@ -151,7 +151,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 38432868e8c63f24e8029fa031e0ebc8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 150eb424810a43a4692148a031a740b0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -264,6 +264,12 @@ MonoBehaviour:
     message: Um, okay then. You wanna get pizza?
   - actorId: 2
     message: Yeah.
+  - actorId: 0
+    message: ...
+  - actorId: 0
+    message: (I guess she doesn't want the letter, then?)
+  - actorId: 0
+    message: (I should go back to Grace.)
   actors:
   - name: Cedar
     sprite: {fileID: 21300000, guid: eac71d9496d04244d80750236f5ab6ec, type: 3}
@@ -300,7 +306,6 @@ GameObject:
   - component: {fileID: 234864846}
   - component: {fileID: 234864845}
   - component: {fileID: 234864844}
-  - component: {fileID: 234864843}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -308,19 +313,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &234864843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234864842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81a4fa01793679c4fb0fe3afaef0d41d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GraceLetter: {fileID: 0}
 --- !u!95 &234864844
 Animator:
   serializedVersion: 5
@@ -554,6 +546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 420084144}
   - component: {fileID: 420084143}
+  - component: {fileID: 420084145}
   m_Layer: 0
   m_Name: June
   m_TagString: Untagged
@@ -628,6 +621,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &420084145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420084142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85c2d2a14d90784db3c7a0d99339a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glideSpeed: 0.1
+  repeatCount: 20
 --- !u!1 &607513078
 GameObject:
   m_ObjectHideFlags: 3
@@ -1182,6 +1189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 920712722}
   - component: {fileID: 920712721}
+  - component: {fileID: 920712723}
   m_Layer: 0
   m_Name: JuneFriend
   m_TagString: Untagged
@@ -1256,6 +1264,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &920712723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920712720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85c2d2a14d90784db3c7a0d99339a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glideSpeed: 0.1
+  repeatCount: 20
 --- !u!1 &1017046803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,7 +1332,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1923592283}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -1737,6 +1759,7 @@ MonoBehaviour:
   JumpingCedar: {fileID: 0}
   Camera: {fileID: 0}
   Directions: {fileID: 0}
+  Railroad: {fileID: 0}
   DialougeBox: {fileID: 1620693984}
 --- !u!225 &1620693984
 CanvasGroup:
