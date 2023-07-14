@@ -7,6 +7,7 @@ public class GlideScript : MonoBehaviour
 {
     public float glideSpeed = 1f;
     public int repeatCount = 20;
+    private bool OneTime = false;
 
     int clickCount = 0;
 
@@ -50,12 +51,31 @@ public class GlideScript : MonoBehaviour
 
         if (clickCount > 9)
         {
-            if (gameObject.name == "CedarSwimming")
+            Scene currentScene = SceneManager.GetActiveScene();
+            if (currentScene.buildIndex == 10)
             {
-                gameObject.transform.localScale = new Vector3(10, -10, 1);
-                StartCoroutine(GlideDown());
+                if (gameObject.name == "CedarSwimming")
+                {
+                    gameObject.transform.localScale = new Vector3(10, -10, 1);
+                    StartCoroutine(GlideDown());
+                }
             }
         }
+
+        if (clickCount > 8)
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            if (currentScene.buildIndex == 11)
+            {
+                if (gameObject.name == "CedarSwimming" && OneTime == false)
+                {
+                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                    StartCoroutine(GlideUp());
+                    OneTime = true;
+                }
+            }
+        }
+
 
         if (clickCount > 14)
         {
