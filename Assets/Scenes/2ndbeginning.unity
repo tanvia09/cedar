@@ -485,7 +485,7 @@ MonoBehaviour:
     message: I was worried when you didn't come back!
   - actorId: 1
     message: Did June write a reply?
-  - actorId: 0
+  - actorId: 5
     message: ...
   - actorId: 2
     message: I knew it. She really has been avoiding me this whole time.
@@ -515,12 +515,12 @@ MonoBehaviour:
   - actorId: 1
     message: '"Love, Nina"'
   - actorId: 4
+    message: ...
+  - actorId: 4
     message: Really? She wants to be friends with me?"
   - actorId: 2
     message: But, I don't want to be too clingy. What if she hates me? Then I'll
       be alone again...
-  - actorId: 0
-    message: ...
   - actorId: 0
     message: '!'
   - actorId: 1
@@ -528,12 +528,12 @@ MonoBehaviour:
       on one.
   - actorId: 2
     message: But where am I gonna get all those friends?
-  - actorId: 2
+  - actorId: 1
     message: Oh! I have an idea!
   - actorId: 1
     message: Cedar, could you do me a favor?
   - actorId: 1
-    message: Oh, and for all your effort, here!
+    message: Not for free, of course.
   actors:
   - name: Cedar
     sprite: {fileID: 21300000, guid: eac71d9496d04244d80750236f5ab6ec, type: 3}
@@ -544,9 +544,9 @@ MonoBehaviour:
   - name: Grace
     sprite: {fileID: 21300000, guid: 40679c5d9be22bc4d818727bed952b68, type: 3}
   - name: Grace
-    sprite: {fileID: 21300000, guid: 40679c5d9be22bc4d818727bed952b68, type: 3}
+    sprite: {fileID: 21300000, guid: 8994d37e4e86c4f42acecf2dc7c963a8, type: 3}
   - name: Cedar
-    sprite: {fileID: 21300000, guid: 7fc84c1d6199e0d4a9da8527bfa834ce, type: 3}
+    sprite: {fileID: 21300000, guid: 2423c4e8c8f78634489c3a70a81a0fb5, type: 3}
   Diabox: {fileID: 930866554}
 --- !u!4 &83068431
 Transform:
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GraceLetter: {fileID: 1992911887}
-  Watermelon: {fileID: 32866541}
+  Watermelon: {fileID: 894530108}
 --- !u!1 &696555013
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +794,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &894530108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 894530109}
+  m_Layer: 0
+  m_Name: Watermelon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &894530109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894530108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.354215, y: -2.5320399, z: 13.901363}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &930866554
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +951,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1174329522}
   - component: {fileID: 1174329521}
+  - component: {fileID: 1174329523}
+  - component: {fileID: 1174329524}
   m_Layer: 0
   m_Name: Grace Side
   m_TagString: Untagged
@@ -987,13 +1020,48 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174329520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.72, y: 0.96, z: 5}
+  m_LocalPosition: {x: -7.52, y: 1.06, z: 5}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1174329523
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174329520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0be62b77eb14ea445a6590520c153fbb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1174329524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174329520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ab3474aac72144bb80be9a1370e3fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1174329523}
+  Cedar: {fileID: 1184264708}
 --- !u!1 &1184264708
 GameObject:
   m_ObjectHideFlags: 0
