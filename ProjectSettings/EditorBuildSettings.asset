@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2ndbeginning.unity
     guid: c284d886b24d5c84d97527f1bb8109d7
+  - enabled: 1
+    path: Assets/Scenes/OldLadyRiver.unity
+    guid: cc0443c294f422845a8d3ee7c82801db
   m_configObjects: {}
