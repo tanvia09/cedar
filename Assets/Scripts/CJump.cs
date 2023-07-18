@@ -78,6 +78,11 @@ public class CJump : MonoBehaviour
             }
         }
 
+        if (transform.position.y > Island)
+        {
+            animator.SetBool("Isswimming", false);
+        }
+
         if (transform.position.y < thresholdY)
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;

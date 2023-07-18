@@ -23,7 +23,7 @@ public class NewLetter : MonoBehaviour
         if (clickCount >= 17)
         {
             GraceLetter.SetActive(false);
-            StartCoroutine(Wait());
+            StartCoroutine(ToSceneTwelve());
         }
 
         if (clickCount >= 25)

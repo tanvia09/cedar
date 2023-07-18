@@ -78,7 +78,7 @@ public class DialougeManager : MonoBehaviour
             {
                 SceneManager.LoadScene(7);
             }
-            if (currentScene.buildIndex == 7)
+            if (currentScene.buildIndex == 7 || currentScene.buildIndex == 12)
             {
                 Camera.SetActive(false);
                 CedarSwims.SetActive(false);

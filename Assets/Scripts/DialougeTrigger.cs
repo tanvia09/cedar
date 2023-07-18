@@ -10,6 +10,7 @@ public class DialougeTrigger : MonoBehaviour
     private AudioSource RiversideTheme;
     public GameObject Diabox;
     private bool OneTime = true;
+    private bool OneTime12 = true;
 
     void Start()
     {
@@ -28,7 +29,10 @@ public class DialougeTrigger : MonoBehaviour
                     {
                         if (currentScene.buildIndex != 9)
                         {
-                            StartDialouge();
+                            if (currentScene.buildIndex != 12)
+                            {
+                                StartDialouge();
+                            }
                         }
                     }
                 }
@@ -53,6 +57,19 @@ public class DialougeTrigger : MonoBehaviour
                     DialougeManager dialougeManager = FindObjectOfType<DialougeManager>();
                     dialougeManager.OpenDialouge(messages, actors);
                     OneTime = false;
+                }
+            }
+        }
+
+        if (currentScene.buildIndex == 12)
+        {
+            if (Diabox.activeSelf)
+            {
+                if (OneTime12 == true)
+                {
+                    DialougeManager dialougeManager = FindObjectOfType<DialougeManager>();
+                    dialougeManager.OpenDialouge(messages, actors);
+                    OneTime12 = false;
                 }
             }
         }
