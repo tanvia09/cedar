@@ -69,7 +69,20 @@ public class CedarController : MonoBehaviour
                 Crashed = false;
             }
         }
-        
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.buildIndex == 12)
+        {
+            if (transform.position.x > 0)
+            {
+                thresholdY = 150f;
+            }
+            else
+            {
+                thresholdY = 166f;
+            }
+        }
+
     }
     private IEnumerator WaitForSeconds()
     {

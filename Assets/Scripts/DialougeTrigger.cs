@@ -10,7 +10,7 @@ public class DialougeTrigger : MonoBehaviour
     private AudioSource RiversideTheme;
     public GameObject Diabox;
     private bool OneTime = true;
-    private bool OneTime12 = true;
+    public GameObject CedarSwims;
 
     void Start()
     {
@@ -63,14 +63,10 @@ public class DialougeTrigger : MonoBehaviour
 
         if (currentScene.buildIndex == 12)
         {
-            if (Diabox.activeSelf)
+            if (Diabox.activeSelf && CedarSwims.activeSelf)
             {
-                if (OneTime12 == true)
-                {
-                    DialougeManager dialougeManager = FindObjectOfType<DialougeManager>();
-                    dialougeManager.OpenDialouge(messages, actors);
-                    OneTime12 = false;
-                }
+                DialougeManager dialougeManager = FindObjectOfType<DialougeManager>();
+                dialougeManager.OpenDialouge(messages, actors);
             }
         }
     }

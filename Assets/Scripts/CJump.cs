@@ -18,6 +18,7 @@ public class CJump : MonoBehaviour
     public float thresholdY = -10f;
     public GameObject Panel;
     public Rigidbody2D rb;
+    public GameObject CSwim;
 
     public void OnTriggerStay2D(Collider2D other)
     {
@@ -38,7 +39,8 @@ public class CJump : MonoBehaviour
 
     void Update()
     {
-        //moving
+        Scene currentScene = SceneManager.GetActiveScene();
+
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * moveSpeed * Time.deltaTime);
@@ -51,7 +53,7 @@ public class CJump : MonoBehaviour
             StartCoroutine(WaitOnJump());
             StartCoroutine(OffGround());
         }
-        //here too
+
         if (SpacePressed == true)
         {
             transform.Translate(Vector3.down * velocity * Time.deltaTime);
@@ -85,9 +87,37 @@ public class CJump : MonoBehaviour
 
         if (transform.position.y < thresholdY)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
-            Panel.SetActive(true);
-            StartCoroutine(WaitForSeconds());
+            if (currentScene.buildIndex == 7)
+            {
+                rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+                Panel.SetActive(true);
+                StartCoroutine(WaitForSeconds());
+            }
+            else if (currentScene.buildIndex == 12)
+            {
+                CSwim.SetActive(true);
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private void OnEnable()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.buildIndex == 12)
+        {
+            if (transform.position.x > 0)
+            {
+                Island = 150f;
+                Vector3 newPosition = new Vector3(15.2f, 155.5f, -1f);
+                transform.position = newPosition;
+            }
+            else
+            {
+                Island = 166f;
+                Vector3 newPosition = new Vector3(-17.6f, 169.3f, -1f);
+                transform.position = newPosition;
+            }
         }
     }
 
