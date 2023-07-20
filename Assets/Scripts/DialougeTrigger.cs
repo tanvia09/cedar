@@ -60,15 +60,6 @@ public class DialougeTrigger : MonoBehaviour
                 }
             }
         }
-
-        if (currentScene.buildIndex == 12)
-        {
-            if (Diabox.activeSelf && CedarSwims.activeSelf)
-            {
-                DialougeManager dialougeManager = FindObjectOfType<DialougeManager>();
-                dialougeManager.OpenDialouge(messages, actors);
-            }
-        }
     }
 
     IEnumerator Wait()

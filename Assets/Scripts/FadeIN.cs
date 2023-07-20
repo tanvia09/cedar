@@ -25,14 +25,23 @@ public class FadeIN : MonoBehaviour
         {
             StartCoroutine(DelayedAction());
         }
+
+        if (currentScene.buildIndex == 12)
+        {
+            StartCoroutine(DelayedAction());
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
         if (Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(DelayedAction());
+            if (currentScene.buildIndex != 12)
+            {
+                StartCoroutine(DelayedAction());
+            }
         }
     }
 

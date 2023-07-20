@@ -15,7 +15,11 @@ public class CedarController : MonoBehaviour
     public GameObject GameOver;
     public float thresholdY = 54.4f;
     public GameObject BlackScreen;
+    public GameObject BlackScreen2;
     public static GameObject AudioSource;
+    public GameObject SideCheck;
+    private int ResetNumber = 0;
+
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
@@ -32,7 +36,6 @@ public class CedarController : MonoBehaviour
 
     void Update()
     {
-
         if (transform.position.y > thresholdY)
         {
             CrossY = true;
@@ -58,12 +61,12 @@ public class CedarController : MonoBehaviour
                 }
             }
         }
-        
-        if (Crashed)
+
+        if (Crashed && !BlackScreen.activeSelf)
         {
             Vector3 newPosition = new Vector3(0f, 0f, 1f);
             transform.position = newPosition;
-           
+
             if (!GameOver.activeSelf)
             {
                 Crashed = false;
@@ -81,13 +84,37 @@ public class CedarController : MonoBehaviour
             {
                 thresholdY = 166f;
             }
-        }
 
+            if (SideCheck.activeSelf)
+            {
+                Reset();
+            }
+
+            if (ResetNumber >= 3)
+            {
+                BlackScreen2.SetActive(true);
+                StartCoroutine(ToCredits());
+            }
+        }
     }
+
+    private void OnEnable()
+    {
+        ResetNumber++;
+        Reset();
+    }
+
+    private void Reset()
+    {
+        Vector3 newPosition = new Vector3(0f, 0f, 1f);
+        transform.position = newPosition;
+        CrossY = false;
+        BlackScreen.SetActive(false);
+    }
+
     private IEnumerator WaitForSeconds()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        
         if (currentScene.buildIndex == 2)
         {
             yield return new WaitForSeconds(3f);
@@ -100,5 +127,14 @@ public class CedarController : MonoBehaviour
             SceneManager.LoadScene(5);
         }
     }
-
+    
+    private IEnumerator ToCredits()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.buildIndex == 12)
+        {
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene(13);
+        }
+    }
 }

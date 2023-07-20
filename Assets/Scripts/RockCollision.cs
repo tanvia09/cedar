@@ -5,7 +5,6 @@ using UnityEngine;
 public class RockCollision : MonoBehaviour
 {
     public GameObject GameOver;
-    // Start is called before the first frame update
 
     public void OnTriggerEnter2D (Collider2D collider)
     {
@@ -17,7 +16,6 @@ public class RockCollision : MonoBehaviour
 
     public void CedarCollided()
     {
-        Debug.Log("GameOver");
         GameOver.SetActive(true);
     }
 }

@@ -23,19 +23,12 @@ public class NewLetter : MonoBehaviour
         if (clickCount >= 17)
         {
             GraceLetter.SetActive(false);
-            StartCoroutine(ToSceneTwelve());
         }
 
         if (clickCount >= 25)
         {
             Watermelon.SetActive(true);
         }
-    }
-
-    IEnumerator ToSceneTwelve()
-    {
-        yield return new WaitForSeconds(2f);
-        Watermelon.SetActive(false);
     }
 }
 

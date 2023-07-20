@@ -648,6 +648,7 @@ MonoBehaviour:
   - name: Sealia's Dad
     sprite: {fileID: 21300000, guid: 3eb1fd5f67b418946a42b1b330d052f4, type: 3}
   Diabox: {fileID: 1770154518}
+  CedarSwims: {fileID: 0}
 --- !u!95 &188235396
 Animator:
   serializedVersion: 5
@@ -1087,7 +1088,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238691061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.569502, y: -3.068249, z: -11}
+  m_LocalPosition: {x: 4.864477, y: -3.0684102, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1350,6 +1351,7 @@ MonoBehaviour:
   - name: 
     sprite: {fileID: 0}
   Diabox: {fileID: 1770154518}
+  CedarSwims: {fileID: 0}
 --- !u!114 &342244596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1957,6 +1959,7 @@ MonoBehaviour:
   - name: 
     sprite: {fileID: 0}
   Diabox: {fileID: 1770154518}
+  CedarSwims: {fileID: 0}
 --- !u!4 &797381181
 Transform:
   m_ObjectHideFlags: 0
@@ -2032,8 +2035,8 @@ PolygonCollider2D:
     - - {x: -0.14840965, y: 2.5022578}
       - {x: -3.0001645, y: 2.5048716}
       - {x: -2.9990046, y: -2.4993598}
-      - {x: 3.0052495, y: -2.509967}
-      - {x: 3.0032835, y: 2.5002964}
+      - {x: 2.9702864, y: -2.5143373}
+      - {x: 2.9840147, y: 2.5002964}
 --- !u!4 &1062089222
 Transform:
   m_ObjectHideFlags: 0

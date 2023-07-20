@@ -61,6 +61,7 @@ public class DialougeManager : MonoBehaviour
 
     public void NextMessage()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
         activeMessage++;
         if (activeMessage < currentMessages.Length)
         {
@@ -68,7 +69,6 @@ public class DialougeManager : MonoBehaviour
         }
         else 
         {
-            Scene currentScene = SceneManager.GetActiveScene();
             isActive = false;
             if (currentScene.buildIndex == 1)
             {
@@ -97,17 +97,13 @@ public class DialougeManager : MonoBehaviour
             }
             StartCoroutine(DelayedAction()); //fades out box
         }
-
     }
 
-    // Start is called before the first frame update
     void Start() 
     {
         DialougeBox = GetComponent<CanvasGroup>();
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && isActive == true)

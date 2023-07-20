@@ -19,6 +19,7 @@ public class CJump : MonoBehaviour
     public GameObject Panel;
     public Rigidbody2D rb;
     public GameObject CSwim;
+    public GameObject SwimCam;
 
     public void OnTriggerStay2D(Collider2D other)
     {
@@ -63,7 +64,6 @@ public class CJump : MonoBehaviour
         {
             if (!Input.GetKeyDown(KeyCode.Space))
             {
-                velocity = 0;
                 animator.SetBool("Isswimming", false);
             }
         }
@@ -97,26 +97,32 @@ public class CJump : MonoBehaviour
             {
                 CSwim.SetActive(true);
                 gameObject.SetActive(false);
+                SwimCam.SetActive(true);
+                Debug.Log("switch to swim");
             }
         }
     }
 
     private void OnEnable()
     {
+        velocity = 0;
+        float SwimPos = CSwim.transform.position.x;
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.buildIndex == 12)
         {
-            if (transform.position.x > 0)
+            if (SwimPos > 0)
             {
                 Island = 150f;
                 Vector3 newPosition = new Vector3(15.2f, 155.5f, -1f);
                 transform.position = newPosition;
             }
-            else
+            
+            if (SwimPos < 0)
             {
                 Island = 166f;
                 Vector3 newPosition = new Vector3(-17.6f, 169.3f, -1f);
                 transform.position = newPosition;
+                Debug.Log("left side");
             }
         }
     }

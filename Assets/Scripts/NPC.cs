@@ -17,7 +17,7 @@ public class NPC : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Player") == true)
+        if (collider.gameObject.CompareTag("Player") == true || collider.gameObject.CompareTag("Cedarswims") == true)
         {
             if (CF == true)
             {
