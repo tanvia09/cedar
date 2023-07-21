@@ -106,7 +106,7 @@ public class DialougeManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && isActive == true)
+        if (Input.GetMouseButtonDown(0) && isActive == true && PauseScript.Paused == false)
         {
             NextMessage();
         }

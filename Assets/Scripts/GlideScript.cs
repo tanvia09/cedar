@@ -8,7 +8,7 @@ public class GlideScript : MonoBehaviour
     public float glideSpeed = 1f;
     public int repeatCount = 20;
     private bool OneTime = false;
-
+    public GameObject Train;
     int clickCount = 0;
 
     void Start()
@@ -56,6 +56,7 @@ public class GlideScript : MonoBehaviour
             {
                 if (gameObject.name == "CedarSwimming")
                 {
+                    Train.SetActive(true);
                     gameObject.transform.localScale = new Vector3(10, -10, 1);
                     StartCoroutine(GlideDown());
                 }
@@ -122,7 +123,7 @@ public class GlideScript : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(11);
     }
 }

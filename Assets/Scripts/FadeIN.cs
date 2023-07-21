@@ -35,13 +35,9 @@ public class FadeIN : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && PauseScript.Paused == false && gameObject.name == "Text (TMP)")
         {
-            if (currentScene.buildIndex != 12)
-            {
-                StartCoroutine(DelayedAction());
-            }
+            StartCoroutine(DelayedAction());
         }
     }
 

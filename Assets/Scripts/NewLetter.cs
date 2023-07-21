@@ -7,6 +7,7 @@ public class NewLetter : MonoBehaviour
     int clickCount = 0;
     public GameObject GraceLetter;
     public GameObject Watermelon;
+    public GameObject Train;
 
     void Update()
     {
@@ -28,6 +29,7 @@ public class NewLetter : MonoBehaviour
         if (clickCount >= 25)
         {
             Watermelon.SetActive(true);
+            Train.SetActive(true);
         }
     }
 }
