@@ -500,7 +500,6 @@ GameObject:
   - component: {fileID: 272400643}
   - component: {fileID: 272400642}
   - component: {fileID: 272400641}
-  - component: {fileID: 272400644}
   m_Layer: 4
   m_Name: background
   m_TagString: Untagged
@@ -589,18 +588,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 27.4}
   m_SizeDelta: {x: 500, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &272400644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272400640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b2a0e1711a52ca4e8ccadd184f650f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &321143091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,8 +1981,8 @@ MonoBehaviour:
   GameOver: {fileID: 1981368912}
   thresholdY: 54.4
   BlackScreen: {fileID: 1695675490}
-  BlackScreen2: {fileID: 0}
-  SideCheck: {fileID: 0}
+  BlackScreen2: {fileID: 1710609055}
+  SideCheck: {fileID: 1710609055}
 --- !u!212 &1122241731
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2452,7 +2439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glideSpeed: 2
   repeatCount: 20
-  Train: {fileID: 0}
+  Train: {fileID: 1710609055}
 --- !u!212 &1494758344
 SpriteRenderer:
   m_ObjectHideFlags: 0
