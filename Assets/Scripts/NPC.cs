@@ -76,7 +76,7 @@ public class NPC : MonoBehaviour
                 }
             }
             
-            if (clickCount == 7)
+            if (clickCount >= 9)
             {
                 StartCoroutine(Glide());
             }

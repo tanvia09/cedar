@@ -4438,7 +4438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &842270263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4519,7 +4519,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.11802329}
+  m_Offset: {x: 0, y: -0.08611161}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4530,7 +4530,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.083074436, y: 0.0038639978}
+  m_Size: {x: 0.083074436, y: 0.06768735}
   m_EdgeRadius: 0
 --- !u!50 &842270266
 Rigidbody2D:
@@ -4565,18 +4565,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f37fae671281349b171c319bc2f334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 20
-  gravity: 1
+  jumpForce: 10
+  gravity: 0.5
   UpSpeed: 20
   Island: 183
   moveSpeed: 5
   animator: {fileID: 842270268}
   GroundOff: 0
-  thresholdY: -10
+  thresholdY: 0
   Panel: {fileID: 132763457}
   rb: {fileID: 842270266}
-  CSwim: {fileID: 0}
-  SwimCam: {fileID: 0}
+  CSwim: {fileID: 1403850371}
+  SwimCam: {fileID: 990836679}
 --- !u!95 &842270268
 Animator:
   serializedVersion: 5
@@ -5173,7 +5173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910506966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.3999996, z: -9}
+  m_LocalPosition: {x: -0.19769764, y: -5.4090977, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7164,7 +7164,7 @@ MonoBehaviour:
   NewPacificana: 0
   UPspeed: 10
   Panel: {fileID: 1083453085}
-  moveSpeed: 5
+  moveSpeed: 8
   GameOver: {fileID: 1641867565}
   thresholdY: 180
   BlackScreen: {fileID: 278224358}

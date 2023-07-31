@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CJump : MonoBehaviour
 {
-    public float jumpForce = 20;
-    float velocity;
+    public float jumpForce = 12;
+    public float velocity;
     public float gravity = -10f;
     private bool IsGrounded = true;
     public float UpSpeed = 10f;
@@ -28,7 +28,6 @@ public class CJump : MonoBehaviour
             if (!GroundOff)
             {
                 IsGrounded = true;
-                animator.SetBool("Isjumping", false);
                 animator.SetBool("Isswimming", false);
             }
         }
@@ -41,13 +40,16 @@ public class CJump : MonoBehaviour
     void Update()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-
-        float verticalInput = Input.GetAxis("Vertical");
+        
+        rb.constraints = RigidbodyConstraints2D.None;
+        GetComponent<Rigidbody2D>().freezeRotation = true;
+        rb.bodyType = RigidbodyType2D.Dynamic;
         float horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * moveSpeed * Time.deltaTime);
-        transform.Translate(Vector3.up * verticalInput * moveSpeed * Time.deltaTime);
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector2 movement = new Vector2(horizontalInput, verticalInput);
+        movement.Normalize();
+        rb.velocity = movement * moveSpeed;
 
-        velocity += gravity * Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             velocity = jumpForce;
@@ -129,11 +131,16 @@ public class CJump : MonoBehaviour
 
     private IEnumerator WaitOnJump()
     {
+        velocity = jumpForce;
         SpacePressed = true;
         IsGrounded = false;
         animator.SetBool("Isswimming", false);
         animator.SetBool("Isjumping", true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
+        velocity = 5f;
+        yield return new WaitForSeconds(0.25f);
+        velocity = 2.5f;
+        yield return new WaitForSeconds(0.25f);
         animator.SetBool("Isjumping", false);
         SpacePressed = false;
     }

@@ -85,18 +85,14 @@ public class DialougeManager : MonoBehaviour
                 JumpingCedar.SetActive(true);
                 Directions.SetActive(true);
             }
-            if (currentScene.buildIndex == 9)
-            {
-                if (Railroad.activeSelf)
-                {
-                    ChooChoo = GetComponent<AudioSource>();
-                    ChooChoo.Play(0);
-                    StartCoroutine(DelayedAction());
-                    StartCoroutine(LoadSceneTen());
-                }
-            }
             StartCoroutine(DelayedAction()); //fades out box
         }
+    }
+
+    public void VillTown()
+    {
+        isActive = false;
+        SceneManager.LoadScene(10);
     }
 
     void Start() 
@@ -111,12 +107,6 @@ public class DialougeManager : MonoBehaviour
             NextMessage();
         }
 
-    }
-
-    IEnumerator LoadSceneTen()
-    {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(10);
     }
 }
 

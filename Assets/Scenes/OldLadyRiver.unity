@@ -1461,7 +1461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.23517592, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.7068657}
-  m_AnchoredPosition: {x: -93, y: -28}
+  m_AnchoredPosition: {x: -93, y: -20.6}
   m_SizeDelta: {x: -8, y: -37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &245085101
@@ -2599,7 +2599,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427583159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.030090332, y: 5.791066, z: -9}
+  m_LocalPosition: {x: 0.03011036, y: 5.794771, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3735,12 +3735,12 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!4 &703275496
 Transform:
@@ -9654,8 +9654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f37fae671281349b171c319bc2f334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 30
-  gravity: 1
+  jumpForce: 15
+  velocity: 0
+  gravity: 0.5
   UpSpeed: 20
   Island: 168
   moveSpeed: 5
@@ -11868,9 +11869,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewPacificana: 0
-  UPspeed: 15
+  UPspeed: 11
   Panel: {fileID: 1327750040}
-  moveSpeed: 8
+  moveSpeed: 10
   GameOver: {fileID: 905875696}
   thresholdY: 166
   BlackScreen: {fileID: 363503686}

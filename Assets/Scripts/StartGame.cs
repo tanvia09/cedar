@@ -23,7 +23,7 @@ public class StartGame : MonoBehaviour
     private IEnumerator SceneOne()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        yield return new WaitForSeconds(7.8f);
+        yield return new WaitForSeconds(9.6f);
         SceneManager.LoadScene(1);
     }
 }
