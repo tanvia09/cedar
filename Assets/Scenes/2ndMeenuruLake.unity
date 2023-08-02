@@ -1471,7 +1471,7 @@ MonoBehaviour:
     message: No problem! You don't need to repay me or anything.
   - actorId: 1
     message: I guess there is still good in the world. I tried asking the mayor for
-      help and he ignored me! Started talking about business.
+      help and he mistook me for a cucumber!
   - actorId: 1
     message: Sorry, I guess you're not really concerned about the mayor.
   - actorId: 0
@@ -2232,7 +2232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060248306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7396288, y: -1.9336333, z: -11}
+  m_LocalPosition: {x: -3.7376432, y: -1.9336233, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

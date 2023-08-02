@@ -49,7 +49,7 @@ public class GlideScript : MonoBehaviour
             }
         }
 
-        if (clickCount > 9)
+        if (clickCount > 8)
         {
             Scene currentScene = SceneManager.GetActiveScene();
             if (currentScene.buildIndex == 10)

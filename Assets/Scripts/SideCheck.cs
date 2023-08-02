@@ -69,6 +69,7 @@ public class SideCheck : MonoBehaviour
     {
         if (DialougeManager.isActive)
         {
+            Debug.Log("DialougeTrue");
             Dialouge = true;
         }
 
