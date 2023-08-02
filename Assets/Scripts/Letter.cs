@@ -23,7 +23,7 @@ public class Letter : MonoBehaviour
     {
         if (SecondsPassed == true)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && PauseScript.Paused == false)
             {
                 clickCount++;
             }

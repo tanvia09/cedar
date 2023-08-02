@@ -29,7 +29,7 @@ public class GlideScript : MonoBehaviour
     {
         if (DialougeManager.isActive)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && PauseScript.Paused == false)
             {
                 clickCount++;
             }

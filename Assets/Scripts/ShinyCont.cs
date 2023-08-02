@@ -47,7 +47,7 @@ public class ShinyCont : MonoBehaviour
 
         if (currentScene.buildIndex == 3)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && PauseScript.Paused == false)
             {
                 if (isGlide)
                 {

@@ -13,7 +13,7 @@ public class GraceAnimator : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && PauseScript.Paused == false)
         {
             clickCount++;
         }
