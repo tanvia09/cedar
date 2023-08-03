@@ -9520,7 +9520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f37fae671281349b171c319bc2f334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 15
+  jumpForce: 17
   velocity: 0
   gravity: 0.5
   UpSpeed: 20
@@ -9528,7 +9528,7 @@ MonoBehaviour:
   moveSpeed: 5
   animator: {fileID: 1791306471}
   GroundOff: 0
-  thresholdY: 2
+  thresholdY: 15
   Panel: {fileID: 511103286}
   rb: {fileID: 1791306474}
   CSwim: {fileID: 2043914984}
